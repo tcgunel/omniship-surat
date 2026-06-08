@@ -52,9 +52,9 @@ class CreateShipmentRequest extends AbstractSoapRequest
         return $this->getParameter('codAmount');
     }
 
-    public function setCodAmount(float $amount): static
+    public function setCodAmount(float|int|string $amount): static
     {
-        return $this->setParameter('codAmount', $amount);
+        return $this->setParameter('codAmount', (float) $amount);
     }
 
     public function getCargoType(): int
